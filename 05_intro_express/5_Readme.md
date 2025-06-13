@@ -53,7 +53,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 Form submit karne ke baad console mein milega:
 
 ```javascript
-{ title: 'Book' } // Clean object format
+{ title: 'Book' } // Clean object formatx`x 
 ```
 
 ## Next Challenge 🤔

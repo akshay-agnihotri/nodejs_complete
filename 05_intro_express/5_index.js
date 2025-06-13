@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.get("/add-product", (req, res) => {
   res.send(
