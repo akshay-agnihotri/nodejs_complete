@@ -1,17 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require("path");
+const rootDir = require("../utils/paths");
 
 const router = express.Router();
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/add-product", (req, res) => {
-  res.send(
-    `<form action="/product" method="POST">
-        <input type="text" name="product-name" placeholder="Product Name" required>
-        <button type="submit">Create Product</button>
-     </form>`
-  );
+  res.sendFile(path.join(rootDir, "views", "add-product.html"));
 });
 
 // app.use will execute for all requests to the /product path
@@ -20,7 +17,7 @@ router.get("/add-product", (req, res) => {
 //   //redirecting request to the root path
 //   res.redirect("/");
 // });
-router.post("/product", (req, res, next) => {
+router.post("/add-product", (req, res, next) => {
   console.log(req.body);
   //redirecting request to the root path
   res.redirect("/");
